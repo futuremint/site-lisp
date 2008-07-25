@@ -92,6 +92,7 @@
 
 ;; Git
 (require 'git)
+(require 'git-blame)
 ;; Gitsum
 (add-to-list 'load-path "~/.site-lisp/gitsum/")
 (require 'gitsum)
