@@ -92,6 +92,9 @@
 
 ;; Git
 (require 'git)
+;; Gitsum
+(add-to-list 'load-path "~/.site-lisp/gitsum/")
+(require 'gitsum)
 
 (server-start)
 
