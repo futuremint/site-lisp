@@ -4,24 +4,24 @@
 
 ;; Enable mouse wheel scrolling
 (mouse-wheel-mode 1)
+
 ;; Enable code highlighting everywhere
 (global-font-lock-mode 1)
+
 ;; Turn on filesets
 (filesets-init)
+
 ;; Turn on icomplete-mode
 (icomplete-mode 1)
 
+;; Shift-arrow keys to change windows
 (windmove-default-keybindings)
 
-;; Shortcut keys from http://steve.yegge.googlepages.com/effective-emacs
-;;  C-x C-m and C-c C-m mapped ot M-x
-;error! (global-set-key "\C-x\C-m" execute-extended-command)
-;(global-set-key "\C-c\C-m" execute-extended-command)
-;;  Backspace becomes M-backspace
-
+;; Recursive file find (awesome)
 (add-to-list 'load-path "~/.site-lisp")
-;; (require 'snippet)
 (require 'find-recursive)
+
+;; Zenburn color scheme (for those late nights)
 ;; (require 'zenburn)
 ;; (zenburn)
 
@@ -60,10 +60,6 @@
 (add-to-list 'load-path "~/.site-lisp/rhtml/")
 (require 'rhtml-mode)
 
-;; Rails minor mode
-;; (add-to-list 'load-path "~/.site-lisp/emacs-rails")
-;; (require 'rails)
-
 ;; Redefine auto-mode for ERB files
 (add-to-list 'auto-mode-alist '("\\.erb$" . rhtml-mode))
 ;; For some rake files
@@ -78,7 +74,7 @@
 (set-terminal-coding-system 'utf-8-unix)
 (set-keyboard-coding-system 'utf-8-unix)
 
-;; Ri for Emacs
+;; Ri for Emacs *Broken, needs help
 ;; (setq ri-ruby-script "~/.site-lisp/ri-emacs-0.2.3/ri-emacs.rb")
 ;; (autoload 'ri "~/.site-lisp/ri-emacs-0.2.3/ri-ruby.el" nil t)
 
