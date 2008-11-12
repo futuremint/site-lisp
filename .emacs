@@ -42,6 +42,8 @@
 (add-to-list 'load-path "~/.site-lisp/org/lisp")
 (require 'org-install)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
 (setq org-hide-leading-stars t)
 
 ;; yasnippet
@@ -116,3 +118,27 @@ Null prefix argument turns off the mode."
     (if auto-save-default
 	(auto-save-mode 1))))
 (global-set-key "\C-x\C-b" sensitive-mode)
+
+;; For inserting HTML tags using Emacs built-in stuff
+;; TODO: Consider making one that can also wrap a region
+(define-skeleton insert-html-tag
+  "Inserts an HTML tag"
+  nil
+  '(setq str (skeleton-read "Tag: "))
+  >"<"str">"-"</"str">")
+
+;; Only run above in RHTML mode
+(add-hook 'rhtml-mode-hook
+          (lambda ()
+            (local-set-key (kbd "<") 'insert-html-tag)))
+
+;; Pair skeletons for common symbol parings 
+;;  Consider changing this for lots of writing of non-programming stuff (maybe)
+(setq skeleton-pair-on-word t
+      skeleton-pair t)
+(global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
+(global-set-key (kbd "[") 'skeleton-pair-insert-maybe)
+(global-set-key (kbd "{") 'skeleton-pair-insert-maybe)
+(global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
+
+

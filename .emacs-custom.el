@@ -30,6 +30,8 @@
  '(paren-match-face (quote paren-face-match-light))
  '(paren-sexp-mode t)
  '(recentf-mode t)
+ '(ruby-deep-arglist (quote f))
+ '(ruby-electric-newline-before-closing-bracket t)
  '(save-abbrevs nil)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
