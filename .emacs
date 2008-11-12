@@ -39,6 +39,8 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; Org-mode
+(add-to-list 'load-path "~/.site-lisp/org/lisp")
+(require 'org-install)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (setq org-hide-leading-stars t)
 
