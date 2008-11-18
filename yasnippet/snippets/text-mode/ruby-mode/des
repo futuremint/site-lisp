@@ -1,0 +1,5 @@
+# name : describe "..."
+# --
+describe "${1:something}" do$>
+$0$>
+end$>
