@@ -26,6 +26,7 @@
  '(javascript-indent-level 2)
  '(only-global-abbrevs nil)
  '(org-agenda-files (quote ("~/Documents/dealerflow/notes.org")))
+ '(pabbrev-idle-timer-verbose nil)
  '(pabbrev-minimal-expansion-p t)
  '(paren-match-face (quote paren-face-match-light))
  '(paren-sexp-mode t)

@@ -34,9 +34,15 @@
 ;; Interactive Do: included in emacs
 (require 'ido)
 (ido-mode t)
+(setq ido-enable-flex-matching t)
 
 ;; Never type 'yes' or 'no' again!!
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; w3m configs
+(setq browse-url-browser-function 'w3m-browse-url)
+(autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
+(setq w3m-use-cookies t)
 
 ;; Org-mode
 (add-to-list 'load-path "~/.site-lisp/org/lisp")
@@ -56,6 +62,10 @@
 ;; Erlang mode
 (add-to-list 'load-path "/opt/local/lib/erlang/lib/tools-2.6.1/emacs/")
 (require 'erlang-start)
+
+;; Steve Yegge's "JS2" mode
+(autoload 'js2-mode "js2" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 ;; Save desktop layout on launch and before quit
 (desktop-save-mode 1)
@@ -91,6 +101,36 @@
 
 (server-start)
 
+;; Smooth Scrolling
+(require 'smooth-scrolling)
+
+;; Quote character flipper function
+(defun flip-quote-char (c)
+  "Returns the 'opposite' quote character"
+  (cond
+   ((eq c ?') ?\")
+   ((eq c ?\") ?')
+   (c)))
+
+(defun flip-quote-string-chars ()
+  "Flip quote marks when point is in a string"
+  (interactive)
+  (save-excursion
+    ;; Check if we're inside a string
+    ;; Left quo
+    (skip-syntax-backward "^['\"]")
+    (let ((quo 
+           (flip-quote-char (char-after (- (point) 1)))))
+      (delete-char -1)
+      (insert-char quo 1)
+      ;; Right quo
+      (skip-syntax-forward "^['\"]")
+      (delete-char 1)
+      (insert-char quo 1)
+      )))
+
+(global-set-key (kbd "C-'") 'flip-quote-string-chars)
+
 ;; "Turn off backups" mode
 (define-minor-mode sensitive-mode
   "For sensitive files like password lists.
@@ -107,16 +147,16 @@ Null prefix argument turns off the mode."
   nil
   (if (symbol-value sensitive-mode)
       (progn
-	;; disable backups
-	(set (make-local-variable 'backup-inhibited) t)	
-	;; disable auto-save
-	(if auto-save-default
-	    (auto-save-mode -1)))
-    ;resort to default value of backup-inhibited
+        ;; disable backups
+        (set (make-local-variable 'backup-inhibited) t)	
+        ;; disable auto-save
+        (if auto-save-default
+            (auto-save-mode -1)))
+    ;; resort to default value of backup-inhibited
     (kill-local-variable 'backup-inhibited)
-    ;resort to default auto save setting
+    ;; resort to default auto save setting
     (if auto-save-default
-	(auto-save-mode 1))))
+        (auto-save-mode 1))))
 (global-set-key "\C-x\C-b" sensitive-mode)
 
 ;; For inserting HTML tags using Emacs built-in stuff
