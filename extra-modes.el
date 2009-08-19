@@ -16,8 +16,8 @@
 (setq org-hide-leading-stars t)
 
 ;; Erlang mode
-(add-to-list 'load-path "/opt/local/lib/erlang/lib/tools-2.6.1/emacs/")
-(require 'erlang-start)
+;; (add-to-list 'load-path "/opt/local/lib/erlang/lib/tools-2.6.1/emacs/")
+;; (require 'erlang-start)
 
 ;; Steve Yegge's "JS2" mode
 (autoload 'js2-mode "js2" nil t)
