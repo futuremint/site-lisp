@@ -2,6 +2,11 @@
 ;; Configuring Emacs the way I like it
 ;;
 
+;; MacPorts env for OS X
+(when (equal system-type 'darwin)
+  (setenv "PATH" (concat "/opt/local/bin:/usr/local/bin:" (getenv "PATH")))
+  (push "/opt/local/bin" exec-path))
+
 ;; Custom 'customizations' file
 (setq custom-file "~/.emacs-custom.el")
 (load custom-file)
@@ -49,7 +54,6 @@
 (global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
 (global-set-key (kbd "[") 'skeleton-pair-insert-maybe)
 (global-set-key (kbd "{") 'skeleton-pair-insert-maybe)
-(global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
 
 ;; For inserting HTML tags using Emacs built-in stuff
 ;; TODO: Consider making one that can also wrap a region
