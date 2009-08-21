@@ -1,0 +1,5 @@
+#name : context "something ..."
+# --
+context "${1: }" do$>
+$0$>
+end$>

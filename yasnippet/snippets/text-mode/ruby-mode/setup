@@ -1,0 +1,5 @@
+#name : setup do...
+# --
+setup$1 do$>
+$0$>
+end$>

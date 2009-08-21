@@ -1,0 +1,5 @@
+#name : should "behave certainly ..."
+# --
+should "${1: }" do$>
+$0$>
+end$>
