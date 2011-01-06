@@ -5,15 +5,15 @@
 ;; Recursive file find (awesome)
 (require 'find-recursive)
 
-;; Zenburn color scheme (for those late nights)
-;; (require 'zenburn)
-;; (zenburn)
-
 ;;  Predictive abbreviations
 ;;  http://homepages.cs.ncl.ac.uk/phillip.lord/download/emacs/pabbrev.el
 (add-to-list 'load-path "~/.site-lisp/el")
 (require 'pabbrev)
 (global-pabbrev-mode t)
+
+;; Zenburn (for those late nights)
+;; (require 'zenburn)
+;; (zenburn)
 
 ;; Interactive Do: included in emacs
 (require 'ido)
@@ -39,7 +39,3 @@
 
 ;; Smooth Scrolling ... awesome!
 (require 'smooth-scrolling)
-
-;; Ri for Emacs *Broken, needs help
-;; (setq ri-ruby-script "~/.site-lisp/ri-emacs-0.2.3/ri-emacs.rb")
-;; (autoload 'ri "~/.site-lisp/ri-emacs-0.2.3/ri-ruby.el" nil t)

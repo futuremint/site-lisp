@@ -15,6 +15,23 @@
 (global-set-key "\C-ca" 'org-agenda)
 (setq org-hide-leading-stars t)
 
+;; clojure-mode
+(add-to-list 'load-path "~/opt/clojure-mode")
+(require 'clojure-mode)
+
+;;slime
+;; slime for Clojure
+;; (eval-after-load "slime"
+;;   '(progn (slime-setup '(slime-repl))))
+
+;; (add-to-list 'load-path "~/opt/slime")
+;; (require 'slime)
+;; (slime-setup)
+
+;; slime for SBCL
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
+(setq inferior-lisp-program "sbcl")
+
 ;; Erlang mode
 ;; (add-to-list 'load-path "/opt/local/lib/erlang/lib/tools-2.6.1/emacs/")
 ;; (require 'erlang-start)
@@ -32,8 +49,8 @@
 (require 'git-blame)
 
 ;; Gitsum
-(add-to-list 'load-path "~/.site-lisp/gitsum/")
-(require 'gitsum)
+;;(add-to-list 'load-path "~/.site-lisp/gitsum/")
+;;(require 'gitsum)
 
 ;; "Turn off backups" mode
 (define-minor-mode sensitive-mode

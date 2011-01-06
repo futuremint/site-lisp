@@ -41,7 +41,7 @@
 (desktop-save-mode 1)
 
 ;; Trying to get reasonable behavior out of MULE
-(setq default-input-method "MacOSX")
+;; (setq default-input-method "MacOSX")
 (prefer-coding-system       'utf-8-unix)
 (set-default-coding-systems 'utf-8-unix)
 (set-terminal-coding-system 'utf-8-unix)
