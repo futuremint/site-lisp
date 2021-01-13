@@ -1,2 +1,8 @@
 /.DS_Store
+elpa
+eshell
+auto-save-list
+transient
+*.cache
+projectile-bookmarks.eld
 *.elc
