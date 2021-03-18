@@ -15,9 +15,12 @@
   :after (typescript-mode company flycheck)
   :hook ((typescript-mode . tide-setup)
          (typescript-mode . tide-hl-identifier-mode)
-         (before-save . tide-format-before-save)))
+         (typescript-mode . prettier-js)))
 
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
+
+(use-package js-mode
+  :hook ((js-mode . setup-tide-mode)))
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
@@ -46,9 +49,14 @@
 
 (when (equal system-type 'darwin)
   (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+  (setenv "PATH" (concat "~/.cargo/bin:" (getenv "PATH")))
+  (push "~/.cargo/bin" exec-path)
   (push "/usr/local/bin" exec-path))
 
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load-file custom-file)
 
 (toggle-scroll-bar -1)
+
+(windmove-default-keybindings)
+(display-time-mode)
