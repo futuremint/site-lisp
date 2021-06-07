@@ -29,6 +29,8 @@
             (when (string-equal "tsx" (file-name-extension buffer-file-name))
               (setup-tide-mode))))
 
+(add-hook 'pythom-mode-hook 'company-mode)
+
 ;; enable typescript-tslint checker
 ;; (flycheck-add-mode 'typescript-tslint 'web-mode)
 
@@ -37,7 +39,7 @@
   :init
   (projectile-mode +1)
   :bind (:map projectile-mode-map
-	      ("C-c p" . projectile-command-map)))
+			  ("C-c p" . projectile-command-map)))
 
 (use-package treemacs-projectile
   :after treemacs projectile
