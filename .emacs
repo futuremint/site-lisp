@@ -1,3 +1,4 @@
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 ;; In Emacs 27 package-initialize has already been called in early-init
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
@@ -30,6 +31,9 @@
               (setup-tide-mode))))
 
 (add-hook 'pythom-mode-hook 'company-mode)
+
+;; display line numbers in all programming modes
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;; enable typescript-tslint checker
 ;; (flycheck-add-mode 'typescript-tslint 'web-mode)

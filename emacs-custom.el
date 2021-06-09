@@ -10,16 +10,17 @@
  '(backup-directory-alist '(("." . "~/.emacs.d/file-backups")))
  '(beacon-color "#c82829")
  '(company-idle-delay 0.1)
- '(custom-enabled-themes '(leuven))
+ '(custom-enabled-themes '(sanityinc-tomorrow-eighties))
  '(custom-file "~/.emacs.d/emacs-custom.el")
  '(custom-safe-themes
    '("628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" default))
+ '(exec-path
+   '("~/.local/bin" "/usr/local/bin" "~/.cargo/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin" "/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_14" "/Applications/Emacs.app/Contents/MacOS/libexec-x86_64-10_14" "/Applications/Emacs.app/Contents/MacOS/libexec" "/Applications/Emacs.app/Contents/MacOS/bin"))
  '(fci-rule-color "#d6d6d6")
  '(flycheck-color-mode-line-face-to-color 'mode-line-buffer-id)
  '(frame-background-mode nil)
  '(icomplete-mode nil)
  '(ivy-mode t)
- '(line-number-mode t)
  '(neo-theme 'icons)
  '(neo-window-width 30)
  '(ns-command-modifier 'meta)
@@ -27,7 +28,7 @@
  '(org-log-done 'time)
  '(org-todo-keywords '((sequence "TODO" "CANCELLED" "DONE")))
  '(package-selected-packages
-   '(prettier-js rust-mode ivy color-theme-sanityinc-tomorrow treemacs-magit treemacs-projectile treemacs magit projectile paredit use-package web-mode eldoc company tide))
+   '(prettier-js prettier rust-mode ivy color-theme-sanityinc-tomorrow treemacs-magit treemacs-projectile treemacs magit projectile paredit use-package web-mode eldoc company tide))
  '(projectile-mode t nil (projectile))
  '(rust-format-on-save t)
  '(tab-width 4)
