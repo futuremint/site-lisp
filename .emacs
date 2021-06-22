@@ -16,7 +16,7 @@
   :after (typescript-mode company flycheck)
   :hook ((typescript-mode . tide-setup)
          (typescript-mode . tide-hl-identifier-mode)
-         (typescript-mode . prettier-js)))
+         (typescript-mode . prettier-js-mode)))
 
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
@@ -30,10 +30,15 @@
             (when (string-equal "tsx" (file-name-extension buffer-file-name))
               (setup-tide-mode))))
 
-(add-hook 'pythom-mode-hook 'company-mode)
+(add-hook 'python-mode-hook 'company-mode)
 
 ;; display line numbers in all programming modes
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+;; always use company mode in all programming modes
+(add-hook 'prog-mode-hook 'company-mode)
+
+(add-hook 'org-mode-hook 'visual-line-mode)
+(add-hook 'org-mode-hook 'org-indent-mode)
 
 ;; enable typescript-tslint checker
 ;; (flycheck-add-mode 'typescript-tslint 'web-mode)
